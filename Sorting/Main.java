@@ -10,11 +10,18 @@ public class Main
     public static void main(String[] args) 
     {
         int[] random = randomizedArray(50000, 1, 50000);
+        for(int i = 0; i <= 3; i++)
+        {
+        shuffleArray(random);
+        }
+        
         int[] arrayForAlgorithm1 = Arrays.copyOf(random, random.length);
         int[] arrayForAlgorithm2 = Arrays.copyOf(random, random.length);
+        int[] arrayForAlgorithm3 = Arrays.copyOf(random, random.length);
         
         bubbleSort(arrayForAlgorithm1);
         selectionSort(arrayForAlgorithm2);
+        insertionSort(arrayForAlgorithm3);
     }
 
     public static void bubbleSort(int[] arr)
@@ -76,6 +83,31 @@ public class Main
         }*/
     }
 
+    public static void insertionSort(int[] arr)
+    {
+        long start = System.currentTimeMillis();
+
+        for(int i = 0; i < arr.length; i++)
+        {
+            int key = arr[i]; //creating the element we are trying to compare
+            int j = i - 1;
+
+            while(j >= 0 && arr[j] > key)
+            {
+                arr[j + 1] = arr[j]; //pushing the j element back to make room for the i element
+                j = j - 1; //basically going backwards to see all the prior values
+            }
+            arr[j + 1] = key;
+        }
+
+        long finish = System.currentTimeMillis();
+        long totalTime = finish - start;
+
+        System.out.println("Sorting a random array of size "
+                            + arr.length + " took insertionSort " 
+                            + totalTime + "ms to complete.");
+    }
+
     public static int[] randomizedArray(int size, int start, int end)
     {
         Random rand = new Random();
@@ -109,7 +141,7 @@ public class Main
         
         
 
-    /*public static void shuffleArray(int[] arr)
+    public static void shuffleArray(int[] arr)
     {
         Random rand = new Random();
         
@@ -121,7 +153,7 @@ public class Main
                 arr[i] = arr[k];
                 arr[k] = temp;
             }
-    }*/ //Function was selecting the same value within the array so
+    } //Function was selecting the same value within the array so
     // I am opting not to use it.
 
 }
