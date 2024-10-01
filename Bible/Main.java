@@ -49,7 +49,7 @@ public class Main
             if(newDisciples * 2 >= pop) // can't train more ppl than there are
             {
                 long limit = pop;
-                years = years + 3;
+                i = i + 3;
                 System.out.println(limit);
                 System.out.println(i);
                 break;
