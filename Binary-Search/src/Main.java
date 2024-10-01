@@ -96,8 +96,8 @@ public class Main
     {
         int key = 6;
 
-        int[][] result = BinaryMatrixSearch(arr, key);
-        if(result.length == 0 || result[0].length == 0)
+        int[] result = BinaryMatrixSearch(arr, key);
+        if(result.length == 0 || result.length == 0)
         {
             System.out.println("Key " + key + " not found in the matrix.");
         }
