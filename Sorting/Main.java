@@ -9,7 +9,7 @@ public class Main
     
     public static void main(String[] args) 
     {
-        int[] random = randomizedArray(50000, 1, 50000);
+        int[] random = randomizedArray(10000, 1, 10000);
         for(int i = 0; i <= 3; i++)
         {
         shuffleArray(random);
